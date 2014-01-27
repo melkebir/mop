@@ -51,6 +51,14 @@ To compile cgp-demo:
 Running
 -------
 
-To run `fragments`
+To compute maximal common fragments in `16841.lgf` and `16842.lgf` with a shell size of 1 do:
 
+    cd build
     ./fragments -no-json -s 1 ../../../data/CGP/fragments/16841.lgf ../../../data/CGP/fragments/16842.lgf
+
+To compute all maximal common fragments of `16841.lgf` and the molecules in `data/fragments/lipids`:
+
+    cd build
+    ../script/fragments.py ../data/fragments/lipids/ ../data/fragments/16841.lgf ./fragments 1
+
+The script `fragments.py` takes four arguments as input: the repository directory, the input molecule itself (in LGF format for now), the path to the fragments executable and the shell size.

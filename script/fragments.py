@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import sys
 import os
+import subprocess
 
 def init_rep(rep_dir):
   rep = {}
@@ -11,7 +12,8 @@ def init_rep(rep_dir):
   return rep
 
 def run(input_file, rep_mol_id, rep_mol_filename, fragments_executable, shell_size):
-  os.system(fragments_executable + " -s " + shell_size + " -atb_id " + rep_mol_id + " " + input_file + " " + rep_mol_filename)
+  r = subprocess.check_output([" ".join([fragments_executable, " -s", shell_size, "-atb_id", rep_mol_id, input_file, rep_mol_filename])], shell=True)
+  sys.stdout.write(r)
 
 rep_dir = sys.argv[1]
 input_file = sys.argv[2]
