@@ -16,8 +16,7 @@ HEADERS += \
 
 SOURCES += \
     main.cpp \
-    ../../lemon/arg_parser.cc \
-    ../../common/verbose.cpp \
+    ../verbose.cpp \
     nodekeyitem.cpp \
     nodeitem.cpp \
     errorkeyitem.cpp \
@@ -27,9 +26,11 @@ SOURCES += \
     graphkeywidget.cpp \
     selectmoleculedialog.cpp
 
-INCLUDEPATH += ../../lemon/include \
-        ../../ \
-        ../
+INCLUDEPATH += \
+    ../ \
+    $$(HOME)/lemon/include
+
+PKGCONFIG += 
 
 FORMS += \
     mainwindow.ui \

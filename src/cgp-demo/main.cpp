@@ -5,13 +5,12 @@
  */
 
 #include <iostream>
-#include <lemon/arg_parser.h>
 #include <lemon/list_graph.h>
 #include <QtWidgets>
 
 #include "mainwindow.h"
 #include "moleculeviz.h"
-#include "common/verbose.h"
+#include "verbose.h"
 
 typedef lemon::ListGraph Graph;
 
@@ -22,17 +21,14 @@ int main(int argc, char** argv)
 #ifdef ANDROID
   QString filename = "/sdcard/CWI/list.dat";
 #else
-  lemon::ArgParser ap(argc, argv);
-  ap.parse();
-
   QString filename;
-  if (ap.files().size() == 0)
+  if (argc < 2)
   {
     filename = QFileDialog::getOpenFileName(NULL, "Open file", "", "*.dat");
   }
   else
   {
-    filename = ap.files()[0].c_str();
+    filename = argv[1];
   }
 #endif
 

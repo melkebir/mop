@@ -12,7 +12,7 @@
 #include "graphwidget.h"
 #include "nodeitem.h"
 #include "edgeitem.h"
-#include "solvertreewidthmemdp.h"
+#include "cgp/solvertreewidthmemdp.h"
 
 #include <QtGui>
 #include <math.h>
