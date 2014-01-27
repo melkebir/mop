@@ -1,0 +1,6 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define MOP_VERSION @MOP_VERSION@
+
+#endif // CONFIG_H

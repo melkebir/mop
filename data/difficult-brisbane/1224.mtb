@@ -1,0 +1,307 @@
+#----------------------------TITLE -------------------------------------------
+#   Unknown
+#
+# This file was generated at 13:41 on 2013-04-12 by
+#
+#                  Automatic Topology Builder  
+#
+#                   REVISION 2013-04-10
+#-----------------------------------------------------------------------------
+# Authors     : Alpeshkumar K. Malde, Le Zuo, Matthew Breeze, Martin Stroet, Alan E. Mark
+#
+# Institute   : Molecular Dynamics group, 
+#               School of Chemistry and Molecular Biosciences (SCMB),
+#               The University of Queensland, QLD 4072, Australia
+# URL         : http://compbio.biosci.uq.edu.au/atb
+# Citation    : Malde AK, Zuo L, Breeze M, Stroet M, Poger D, Nair PC, Oostenbrink C, Mark AE.
+#               An Automated force field Topology Builder (ATB) and repository: version 1.0.
+#               Journal of Chemical Theory and Computation, 2011, 7(12), 4026-4037.
+#               http://pubs.acs.org/doi/abs/10.1021/ct200196m
+#
+# Disclaimer  : 
+#      While every effort has been made to ensure the accuracy and validity of parameters provided below
+#      the assignment of parameters is being based on an automated procedure combining data provided by a
+#      given user as well as calculations performed using third party software. They are provided as a guide.
+#      The authors of the ATB cannot guarantee that the parameters are complete or that the parameters provided
+#      are appropriate for use in any specific application. Users are advised to treat these parameters with discretion
+#      and to perform additional validation tests for their specific application if required. Neither the authors
+#      of the ATB or The University of Queensland except any responsibly for how the parameters may be used.
+#
+# Release notes and warnings: 
+#  (1) The topology is based on a set of atomic coordinates and other data provided by the user after
+#      after quantum mechanical optimization of the structure using different levels of theory depending on
+#      the nature of the molecule.
+#  (2) In some cases the automatic bond, bond angle and dihedral type assignment is ambiguous.
+#      In these cases alternative type codes are provided at the end of the line.
+#  (3) While bonded parameters are taken where possible from the nominated force field non-standard bond, angle and dihedral
+#      type code may be incorporated in cases where an exact match could not be found. These are marked as "non-standard"
+#      or "uncertain" in comments.
+#  (4) In some cases it is not possible to assign an appropriate parameter automatically. "%" is used as a place holder
+#      for those fields that could not be determined automatically. The parameters in these fields must be assigned manually
+#      before the file can be used.
+#-----------------------------------------------------------------------------
+# Input Structure : UNK
+# Output          : ALL ATOM topology
+#	Use in conjunction with the corresponding all atom PDB file.
+#----------------------------------------------------------------------------
+#
+TITLE
+    Topology file generated at 13:04 on 12 Apr 2013 for molecule
+    Unknown (IUPAC: Unknown, database identifier: AAA)
+    by Automatic Topology Builder(revision 2013-04-10).
+END
+FORCEFIELD
+53A6
+END
+PHYSICALCONSTANTS
+# FPEPSI: 1.0/(4.0*PI*EPS0) (EPS0 is the permittivity of vacuum)
+  0.1389354E+03
+# HBAR: Planck's constant HBAR = H/(2* PI)
+  0.6350780E-01
+# SPDL: Speed of light (in nm/ps)
+  2.9979245800E05
+# BOLTZ: Boltzmann's constant
+  8.31441E-03
+END
+LINKEXCLUSIONS
+#nearest neighbour exclusions when linking
+#NRNE
+   2
+END
+MTBUILDBLSOLUTE
+# RNME
+AAA
+# number of atoms, number of preceding exclusions
+# NMAT, NLIN
+   44    0
+# preceding exclusions
+# ATOM           MAE MSAE
+# atoms
+# The total charge within a charge group is given in the comments.
+# ATOM  ANM IACM MASS  CGM   ICGM  MAE  MSAE                                                                 group charge
+    1   1H   21    1   0.210   1    4    2    3   12   21                                                     #  0.210
+    2   N1    8   14   0.249   1    9    3   12   21    4   13   22   23   33   34                            #  0.249
+    3   C8   12   12  -0.213   1    8    4   22   23    5   12   21   24   26                                 # -0.213
+    4   C7   12   12   0.159   1   12    5   24   26    6   10   22   23   25    7    9   11   27             #  0.159
+    5   C6   12   12   0.191   1   11    6   10    7    9   11   24   26   27    8   28   31                  #  0.191
+    6   C1   12   12  -0.401   1    8    7   27    8   10   28    9   11   30                                 # -0.401
+    7   C2   12   12   0.429   1    8    8   28    9   27   29   30   10   31                                 #  0.429
+    8   C3   12   12  -0.509   1    7    9   30   10   28   31   11   27                                      # -0.509
+    9   C4   12   12   0.518   1    6   10   31   11   30   32   28                                           #  0.518
+   10   C5   12   12  -0.539   1    4   11   31   27   30                                                     # -0.539
+   11  HC2   20    1   0.202   1    1   31                                                                    #  0.202
+   12   C9   12   12  -0.203   1    7   13   33   34   14   21   35   37                                      # -0.203
+   13  C10   12   12   0.097   1   14   14   35   37   15   19   33   34   36   43   44   16   18   20   38   #  0.097
+   14  C11   12   12   0.117   1   11   15   19   16   18   20   35   37   38   17   39   42                  #  0.117
+   15  C13   12   12  -0.235   1    8   16   38   17   19   39   18   20   40                                 # -0.235
+   16  C16   12   12  -0.212   1    7   17   39   18   38   40   19   42                                      # -0.212
+   17  C17   12   12   0.357   1    8   18   40   19   39   41   42   20   38                                 #  0.357
+   18  C15   12   12  -0.286   1    5   19   42   20   40   39                                                # -0.286
+   19  C14   12   12  -0.223   1    4   20   42   38   40                                                     # -0.223
+   20  HC6   20    1   0.174   1    1   42                                                                    #  0.174
+   21   2H   21    1   0.212   1    0                                                                         #  0.212
+   22  1HC   20    1   0.148   1    1   23                                                                    #  0.148
+   23  2HC   20    1   0.140   1    0                                                                         #  0.140
+   24   O3    3   16  -0.643   1    2   25   26                                                               # -0.643
+   25  HO2   21    1   0.452   1    0                                                                         #  0.452
+   26  HC3   20    1   0.082   1    0                                                                         #  0.082
+   27   HC   20    1   0.205   1    1   28                                                                    #  0.205
+   28   O1    3   16  -0.582   1    2   29   30                                                               # -0.582
+   29   HO   21    1   0.447   1    0                                                                         #  0.447
+   30  HC1   20    1   0.223   1    1   31                                                                    #  0.223
+   31   O2    3   16  -0.597   1    1   32                                                                    # -0.597
+   32  HO1   21    1   0.452   1    0                                                                         #  0.452
+   33 1HC1   20    1   0.110   1    1   34                                                                    #  0.110
+   34 2HC1   20    1   0.110   1    0                                                                         #  0.110
+   35  C12   12   12  -0.322   1    4   36   43   44   37                                                     # -0.322
+   36 1HC2   20    1   0.105   1    2   43   44                                                               #  0.105
+   37  HC4   20    1   0.052   1    0                                                                         #  0.052
+   38  HC5   20    1   0.151   1    1   39                                                                    #  0.151
+   39  HC8   20    1   0.169   1    1   40                                                                    #  0.169
+   40   O4    3   16  -0.594   1    2   41   42                                                               # -0.594
+   41  HO3   21    1   0.450   1    0                                                                         #  0.450
+   42  HC7   20    1   0.168   1    0                                                                         #  0.168
+   43 2HC2   20    1   0.104   1    1   44                                                                    #  0.104
+   44  3HC   20    1   0.076   1    0                                                                         #  0.076
+# total charge of the molecule:   1.000
+# residue group charges redistributed:  0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000
+# bonds
+#  NB
+   45
+# Alternative bond types are placed in comments.
+#  IB   JB   MCB
+    1    2    2 	#  58   
+    2    3   22 	#  23   21   69   
+    2   12   22 	#  23   69   
+    2   21    2 	#  58   
+    3    4   27 	#  26   57   
+    3   22    3 	#  39   
+    3   23    3 	#  39   
+    4    5   26 	#  27   
+    4   24   18 	#  19   20   
+    4   26   39 	#  3    
+    5    6   15 	#  16   60   
+    5   10   15 	#  16   60   
+    6    7   15 	#  16   60   
+    6   27    3 	#  39   
+    7    8   15 	#  16   60   
+    7   28   13 	
+    8    9   15 	#  16   60   
+    8   30    3 	#  39   
+    9   10   15 	#  16   60   
+    9   31   13 	
+   10   11    3 	#  39   
+   12   13   27 	#  26   57   
+   12   33    3 	#  39   
+   12   34    3 	#  39   
+   13   14   27 	#  26   
+   13   35   27 	#  26   57   
+   13   37   39 	#  3    
+   14   15   15 	#  16   60   
+   14   19   15 	#  16   60   
+   15   16   15 	#  16   60   
+   15   38    3 	#  39   
+   16   17   15 	#  16   60   
+   16   39    3 	#  39   
+   17   18   15 	#  16   60   
+   17   40   13 	
+   18   19   15 	#  16   60   
+   18   42    3 	#  39   
+   19   20    3 	#  39   
+   24   25    1 	#  38   
+   28   29    1 	#  38   
+   31   32    1 	#  38   
+   35   36    3 	#  39   
+   35   43   39 	#  3    
+   35   44   39 	#  3    
+   40   41    1 	#  38   
+# bond angles
+# NBA
+   76
+# Alternative angle types are placed in comments.
+#  IB   JB   KB   MCB
+    1    2    3   11 	
+    1    2   12   11 	
+    1    2   21   10 	
+    3    2   12   21 	#  22   
+    3    2   21   11 	#  62   
+   12    2   21   11 	#  18   20   
+    2    3    4    8 	#  9    13   15   7    
+    2    3   22   46 	#  matched closest 
+    2    3   23   61 	#  non-standard 
+    4    3   22   57 	#  non-standard 69   
+    4    3   23   69 	#  non-standard 57   
+   22    3   23   56 	#  non-standard 
+    3    4    5    8 	#  13   15   
+    3    4   24   59 	#  non-standard 
+    3    4   26   57 	#  non-standard 69   
+    5    4   24   19 	#  22   15   51   9    13   
+    5    4   26   57 	#  non-standard 69   
+   24    4   26   71 	#  non-standard 
+    4    5    6   27 	
+    4    5   10   27 	
+    6    5   10   27 	#  35   
+    5    6    7   27 	
+    5    6   27   25 	#  35   36   37   
+    7    6   27   25 	
+    6    7    8   27 	#  35   
+    6    7   28   22 	#  19   30   
+    8    7   28   30 	#  35   37   
+    7    8    9   27 	
+    7    8   30   25 	#  35   36   37   
+    9    8   30   25 	
+    8    9   10   27 	#  35   
+    8    9   31   22 	#  19   30   
+   10    9   31   30 	#  35   37   
+    5   10    9   27 	
+    5   10   11   25 	#  35   
+    9   10   11   25 	#  35   
+    2   12   13   15 	#  19   8    9    13   7    
+    2   12   33   46 	#  matched closest 
+    2   12   34   46 	#  matched closest 
+   13   12   33   57 	#  non-standard 69   
+   13   12   34   69 	#  non-standard 57   
+   33   12   34   56 	#  non-standard 
+   12   13   14    8 	#  13   15   
+   12   13   35   15 	#  8    13   
+   12   13   37   57 	#  non-standard 
+   14   13   35   15 	#  8    13   
+   14   13   37   57 	#  non-standard 
+   35   13   37   57 	#  non-standard 
+   13   14   15   27 	#  35   
+   13   14   19   27 	#  35   37   
+   15   14   19   27 	
+   14   15   16   27 	#  35   37   
+   14   15   38   25 	
+   16   15   38   25 	
+   15   16   17   27 	
+   15   16   39   25 	#  35   36   37   
+   17   16   39   25 	
+   16   17   18   27 	
+   16   17   40   22 	#  19   30   
+   18   17   40   30 	#  35   37   
+   17   18   19   27 	
+   17   18   42   25 	#  35   
+   19   18   42   25 	#  35   
+   14   19   18   27 	#  35   37   
+   14   19   20   25 	#  35   
+   18   19   20   25 	#  69   
+    4   24   25   12 	#  50   47   
+    7   28   29   12 	#  50   47   
+    9   31   32   12 	#  50   47   
+   13   35   36   57 	#  non-standard 69   
+   13   35   43   69 	#  non-standard 57   
+   13   35   44   69 	#  non-standard 57   
+   36   35   43   56 	#  non-standard 
+   36   35   44   56 	#  non-standard 
+   43   35   44   56 	#  non-standard 
+   17   40   41   12 	#  50   47   
+# improper dihedrals 
+# NIDA
+   24
+#  IB   JB   KB   LB   MCB
+    5   10    9    8    1
+   10    9    8    7    1
+    9    8    7    6    1
+    8    7    6    5    1
+    7    6    5   10    1
+    6    5   10    9    1
+   14   19   18   17    1
+   19   18   17   16    1
+   18   17   16   15    1
+   17   16   15   14    1
+   16   15   14   19    1
+   15   14   19   18    1
+    6    5    7   27    1
+    7    6    8   28    1
+    8    7    9   30    1
+    9    8   10   31    1
+   10    5    9   11    1
+    5    4    6   10    1
+   14   13   15   19    1
+   15   14   16   38    1
+   19   14   18   20    1
+   18   17   19   42    1
+   16   15   17   39    1
+   17   16   18   40    1
+# dihedrals
+#MCBs are filled with dummy place holders. Possible values are in comments.
+# NDA
+   11
+#  IB   JB   KB   LB   MCB
+   12    2    3    4   22    #  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  
+    3    2   12   13   22    #  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  
+    2    3    4    5   29    #  34  
+    3    4    5    6   40    
+    5    4   24   25   23    #  24  30  
+    6    7   28   29   11    #  12  
+    8    9   31   32   11    #  12  
+    2   12   13   14   29    #  34  
+   12   13   14   15   39    
+   12   13   35   36   29    #  33  34  
+   18   17   40   41   11    #  12  
+# LJ Exceptions
+# NEX
+    0
+END
+

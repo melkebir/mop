@@ -1,0 +1,57 @@
+HEADER    UNCLASSIFIED                            10-Jan-13
+TITLE     ALL ATOM STRUCTURE FOR MOLECULE UNK                                   
+AUTHOR    GROMOS AUTOMATIC TOPOLOGY BUILDER REVISION 2013-01-10
+AUTHOR   2  http://compbio.biosci.uq.edu.au/atb
+HETATM    1   C7 G265    0      -2.661  -0.933  -0.287  1.00  0.00           C
+HETATM    2  H11 G265    0      -3.686  -1.112  -0.603  1.00  0.00           H
+HETATM    3   C5 G265    0      -0.112  -0.497   0.497  1.00  0.00           C
+HETATM    4   N1 G265    0      -0.562  -1.750   0.500  1.00  0.00           N
+HETATM    5   C8 G265    0      -0.985   0.554   0.089  1.00  0.00           C
+HETATM    6   O1 G265    0      -0.484   1.807   0.114  1.00  0.00           O
+HETATM    7   C9 G265    0      -1.357   2.876  -0.284  1.00  0.00           C
+HETATM    8  H12 G265    0      -0.760   3.784  -0.188  1.00  0.00           H
+HETATM    9  H13 G265    0      -1.686   2.744  -1.319  1.00  0.00           H
+HETATM   10  H14 G265    0      -2.233   2.925   0.369  1.00  0.00           H
+HETATM   11   C4 G265    0       1.308  -0.223   0.922  1.00  0.00           C
+HETATM   12   H8 G265    0       1.661  -1.089   1.494  1.00  0.00           H
+HETATM   13   H9 G265    0       1.317   0.647   1.590  1.00  0.00           H
+HETATM   14   C2 G265    0       2.287   0.050  -0.250  1.00  0.00           C
+HETATM   15   H4 G265    0       1.869   0.872  -0.847  1.00  0.00           H
+HETATM   16   C3 G265    0       2.448  -1.175  -1.163  1.00  0.00           C
+HETATM   17   H5 G265    0       2.887  -2.018  -0.612  1.00  0.00           H
+HETATM   18   H6 G265    0       1.488  -1.509  -1.572  1.00  0.00           H
+HETATM   19   H7 G265    0       3.112  -0.945  -2.004  1.00  0.00           H
+HETATM   20   C1 G265    0       3.647   0.505   0.299  1.00  0.00           C
+HETATM   21   H1 G265    0       4.345   0.726  -0.518  1.00  0.00           H
+HETATM   22   H2 G265    0       3.550   1.409   0.913  1.00  0.00           H
+HETATM   23   H3 G265    0       4.100  -0.277   0.922  1.00  0.00           H
+HETATM   24   C6 G265    0      -1.833  -1.972   0.106  1.00  0.00           C
+HETATM   25  H10 G265    0      -2.182  -3.001   0.115  1.00  0.00           H
+HETATM   26   N2 G265    0      -2.235   0.345  -0.294  1.00  0.00           N
+CONECT    1    2   24   26
+CONECT    2    1
+CONECT    3    4    5   11
+CONECT    4    3   24
+CONECT    5    3    6   26
+CONECT    6    5    7
+CONECT    7    6    8    9   10
+CONECT    8    7
+CONECT    9    7
+CONECT   10    7
+CONECT   11    3   12   13   14
+CONECT   12   11
+CONECT   13   11
+CONECT   14   11   15   16   20
+CONECT   15   14
+CONECT   16   14   17   18   19
+CONECT   17   16
+CONECT   18   16
+CONECT   19   16
+CONECT   20   14   21   22   23
+CONECT   21   20
+CONECT   22   20
+CONECT   23   20
+CONECT   24    1    4   25
+CONECT   25   24
+CONECT   26    1    5
+END

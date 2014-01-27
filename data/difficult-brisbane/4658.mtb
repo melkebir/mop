@@ -1,0 +1,252 @@
+#----------------------------TITLE -------------------------------------------
+#   Unknown
+#
+# This file was generated at 17:38 on 2013-02-18 by
+#
+#                  Automatic Topology Builder  
+#
+#                   REVISION 2013-02-14
+#-----------------------------------------------------------------------------
+# Authors     : Alpeshkumar K. Malde, Le Zuo, Matthew Breeze, Martin Stroet, Alan E. Mark
+#
+# Institute   : Molecular Dynamics group, 
+#               School of Chemistry and Molecular Biosciences (SCMB),
+#               The University of Queensland, QLD 4072, Australia
+# URL         : http://compbio.biosci.uq.edu.au/atb
+# Citation    : Malde AK, Zuo L, Breeze M, Stroet M, Poger D, Nair PC, Oostenbrink C, Mark AE.
+#               An Automated force field Topology Builder (ATB) and repository: version 1.0.
+#               Journal of Chemical Theory and Computation, 2011, 7(12), 4026-4037.
+#               http://pubs.acs.org/doi/abs/10.1021/ct200196m
+#
+# Disclaimer  : 
+#      While every effort has been made to ensure the accuracy and validity of parameters provided below
+#      the assignment of parameters is being based on an automated procedure combining data provided by a
+#      given user as well as calculations performed using third party software. They are provided as a guide.
+#      The authors of the ATB cannot guarantee that the parameters are complete or that the parameters provided
+#      are appropriate for use in any specific application. Users are advised to treat these parameters with discretion
+#      and to perform additional validation tests for their specific application if required. Neither the authors
+#      of the ATB or The University of Queensland except any responsibly for how the parameters may be used.
+#
+# Release notes and warnings: 
+#  (1) The topology is based on a set of atomic coordinates and other data provided by the user after
+#      after quantum mechanical optimization of the structure using different levels of theory depending on
+#      the nature of the molecule.
+#  (2) In some cases the automatic bond, bond angle and dihedral type assignment is ambiguous.
+#      In these cases alternative type codes are provided at the end of the line.
+#  (3) While bonded parameters are taken where possible from the nominated force field non-standard bond, angle and dihedral
+#      type code may be incorporated in cases where an exact match could not be found. These are marked as "non-standard"
+#      or "uncertain" in comments.
+#  (4) In some cases it is not possible to assign an appropriate parameter automatically. "%" is used as a place holder
+#      for those fields that could not be determined automatically. The parameters in these fields must be assigned manually
+#      before the file can be used.
+#-----------------------------------------------------------------------------
+# Input Structure : UNK
+# Output          : UNITED ATOM topology
+#	Use in conjunction with the corresponding united atom PDB file.
+#----------------------------------------------------------------------------
+#
+TITLE
+    Topology file generated at 17:02 on 18 Feb 2013 for molecule
+    Unknown (IUPAC: Unknown, database identifier: AAA)
+    by Automatic Topology Builder(revision 2013-02-14).
+END
+FORCEFIELD
+53A6
+END
+PHYSICALCONSTANTS
+# FPEPSI: 1.0/(4.0*PI*EPS0) (EPS0 is the permittivity of vacuum)
+  0.1389354E+03
+# HBAR: Planck's constant HBAR = H/(2* PI)
+  0.6350780E-01
+# SPDL: Speed of light (in nm/ps)
+  2.9979245800E05
+# BOLTZ: Boltzmann's constant
+  8.31441E-03
+END
+LINKEXCLUSIONS
+#nearest neighbour exclusions when linking
+#NRNE
+   2
+END
+MTBUILDBLSOLUTE
+# RNME
+AAA
+# number of atoms, number of preceding exclusions
+# NMAT, NLIN
+   27    0
+# preceding exclusions
+# ATOM           MAE MSAE
+# atoms
+# The total charge within a charge group is given in the comments.
+# ATOM  ANM IACM MASS  CGM   ICGM  MAE  MSAE                              group charge
+    1   O2    3   16  -0.664   0    4    2    3    4   16
+    2  H18   21    1   0.417   1    1    3                                 # -0.247
+    3  C10   14    3   0.349   1    6    4   16    5    8   17   18        #  0.349
+    4   C4   14    3   0.244   1    7    5    8    6    9   11   15   16   #  0.244
+    5   O1    4   16  -0.404   0    4    6    7    8    9
+    6  C12   12   12   0.162   0    6    7    9    8   10   20   22
+    7  C16   12   12   0.267   1    6   20   22    9   21   23   24        #  0.025
+    8   C1   13   12   0.152   0    7    9   11   15   10   12   14   18
+    9   C6   12   12  -0.199   0    5   10   11   15   24   26
+   10   C9   12   12   0.210   1    5   24   26   12   22   25             #  0.163
+   11   C2   14    3   0.064   1    7   12   18   13   15   16   19   26   #  0.064
+   12   C3   14    3   0.238   1    5   13   26   14   18   27             #  0.238
+   13   N1    7   14  -0.387   1    4   14   27   15   26                  # -0.387
+   14   C8   15    4   0.202   1    2   15   27                            #  0.202
+   15   C5   15    4  -0.120   1    0                                      # -0.120
+   16  C13   12   12  -0.183   0    3   17   18   19
+   17  H12   20    1   0.142   1    1   18                                 # -0.041
+   18  C11   12   12  -0.298   0    1   19
+   19  H11   20    1   0.157   1    0                                      # -0.141
+   20   O3    3   16  -0.583   0    2   21   22
+   21  H19   21    1   0.444   1    0                                      # -0.139
+   22  C17   12   12  -0.274   0    3   23   24   25
+   23  H17   20    1   0.192   1    1   24                                 # -0.082
+   24  C15   12   12  -0.322   0    2   25   26
+   25  H16   20    1   0.166   1    0                                      # -0.156
+   26   C7   15    4  -0.031   1    0                                      # -0.031
+   27  C14   16    5   0.057   1    0                                      #  0.057
+# total charge of the molecule:  -0.002
+# residue group charges redistributed:  0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000
+# bonds
+#  NB
+   31
+# Alternative bond types are placed in comments.
+#  IB   JB   MCB
+    1    2    1 	#  38   
+    1    3   18 	#  19   20   
+    3    4   27 	#  26   
+    3   16   26 	#  27   
+    4    5   20 	#  18   19   
+    4    8   27 	#  26   
+    5    6   13 	
+    6    7   15 	#  16   17   18   
+    6    9   15 	#  16   17   
+    7   20   13 	
+    7   22   17 	#  15   16   18   
+    8    9   26 	#  27   
+    8   11   27 	#  26   
+    8   15   27 	#  26   
+    9   10   15 	#  16   17   
+   10   24   15 	#  16   18   
+   10   26   26 	#  27   
+   11   12   27 	#  26   
+   11   18   26 	#  27   
+   12   13   22 	#  23   21   
+   12   26   27 	
+   13   14   21 	#  22   23   
+   13   27   21 	#  22   23   
+   14   15   27 	#  26   
+   16   17    3 	#  39   
+   16   18   10 	
+   18   19    3 	#  39   
+   20   21   38 	#  1    
+   22   23    3 	#  39   
+   22   24   17 	#  15   16   18   
+   24   25    3 	#  39   
+# bond angles
+# NBA
+   51
+# Alternative angle types are placed in comments.
+#  IB   JB   KB   MCB
+    2    1    3    7 	#  49   43   47   46   10   11   12   13   42   50   14   6    5    
+    1    3    4   15 	#  19   51   9    13   22   
+    1    3   16    9 	#  13   51   15   
+    4    3   16   15 	#  8    13   
+    3    4    5   15 	#  44   51   9    13   48   19   56   
+    3    4    8   15 	#  8    13   56   
+    5    4    8    9 	#  13   51   15   56   
+    4    5    6   46 	#  43   49   7    47   10   11   12   13   42   50   14   6    51   5    15   52   
+    5    6    7   37 	#  35   30   
+    5    6    9   44 	#  15   19   51   21   9    13   22   53   56   
+    7    6    9   27 	#  35   37   
+    6    7   20   35 	#  30   37   
+    6    7   22   27 	
+   20    7   22   30 	#  22   19   
+    4    8    9   57 	#  non-standard 
+    4    8   11   27 	
+    4    8   15   15 	#  8    13   56   
+    9    8   11    8 	#  13   15   
+    9    8   15   15 	#  8    13   
+   11    8   15    8 	#  13   15   
+    6    9    8    8 	#  13   15   
+    6    9   10   35 	#  27   37   
+    8    9   10   37 	#  35   39   
+    9   10   24   27 	
+    9   10   26   27 	
+   24   10   26   35 	#  37   27   
+    8   11   12    8 	#  13   15   56   
+    8   11   18   15 	#  8    13   56   
+   12   11   18   27 	#  15   
+   11   12   13    7 	#  8    9    13   15   
+   11   12   26   15 	#  8    13   56   
+   13   12   26   19 	#  15   27   
+   12   13   14   21 	#  22   
+   12   13   27   21 	#  22   56   
+   14   13   27   21 	#  56   
+   13   14   15   15 	#  8    9    13   7    19   
+    8   15   14   15 	#  8    13   
+    3   16   17   25 	
+    3   16   18   27 	#  35   37   
+   17   16   18   25 	#  35   36   37   
+   11   18   16   27 	#  35   
+   11   18   19   25 	
+   16   18   19   25 	#  29   33   35   
+    7   20   21   47 	#  7    49   43   9    10   11   12   42   50   14   46   6    
+    7   22   23   53 	#  22   25   26   27   28   21   30   19   54   31   
+    7   22   24   27 	#  35   37   
+   23   22   24   25 	#  29   33   35   
+   10   24   22   27 	#  35   37   
+   10   24   25   25 	#  26   27   53   22   21   35   
+   22   24   25   24 	#  25   26   27   20   21   18   19   
+   10   26   12   15 	#  8    13   
+# improper dihedrals 
+# NIDA
+   12
+#  IB   JB   KB   LB   MCB
+    9    6    8   10    1
+   10    9   24   26    1
+   18   11   16   19    1
+    6    5    7    9    1
+   16    3   17   18    1
+   24   10   22   25    1
+    7    6   20   22    1
+   22    7   23   24    1
+   11    8   12   18    2
+   12   11   13   26    2
+    4    5    8    3    2
+    3    1    4   16    2
+# dihedrals
+#MCBs are filled with dummy place holders. Possible values are in comments.
+# NDA
+   24
+#  IB   JB   KB   LB   MCB
+    2    1    3    4   23    #  24  30  
+    1    3    4    5   25    #  29  34  35  37  
+    1    3   16   18   39    
+    8    4    5    6   42    #  non-standard uncertain 
+    5    4    8   11   42    #  non-standard uncertain 
+    4    5    6    9   11    #  12  13  
+    5    6    7   20   10    #  14  15  
+    5    6    9    8   10    #  14  15  
+    6    7   20   21   11    #  12  
+   20    7   22   24   10    #  14  15  
+   11    8    9   10   40    
+    4    8   11   12   29    #  34  
+   11    8   15   14   29    #  34  
+    8    9   10   26    9    #  14  15  
+    9   10   24   22    9    #  14  15  
+    9   10   26   12   39    
+    8   11   12   13   29    #  34  
+    8   11   18   16   40    
+   11   12   13   14   39    
+   13   12   26   10   42    #  non-standard uncertain 
+   12   13   14   15   39    
+   13   14   15    8   29    #  34  
+    3   16   18   11    9    #  14  15  
+    7   22   24   10    9    #  14  15  
+# LJ Exceptions
+# NEX
+    0
+END
+

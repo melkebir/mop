@@ -1,0 +1,38 @@
+HEADER    UNCLASSIFIED                            22-Feb-13
+TITLE     ALL ATOM STRUCTURE FOR MOLECULE 0                                     
+AUTHOR    GROMOS AUTOMATIC TOPOLOGY BUILDER REVISION 2013-02-14
+AUTHOR   2  http://compbio.biosci.uq.edu.au/atb
+HETATM    1   C1 AAA     0       2.992   0.341  -0.057  1.00  0.00           C
+HETATM    2   H1 AAA     0       4.020  -0.011  -0.044  1.00  0.00           H
+HETATM    3   H2 AAA     0       2.852   1.414  -0.159  1.00  0.00           H
+HETATM    4   C2 AAA     0       1.969  -0.521   0.045  1.00  0.00           C
+HETATM    5   H3 AAA     0       2.200  -1.583   0.127  1.00  0.00           H
+HETATM    6   C3 AAA     0       0.529  -0.207   0.037  1.00  0.00           C
+HETATM    7   C4 AAA     0      -0.395  -1.267   0.005  1.00  0.00           C
+HETATM    8   H4 AAA     0      -0.027  -2.291  -0.005  1.00  0.00           H
+HETATM    9   C5 AAA     0      -1.770  -1.027  -0.029  1.00  0.00           C
+HETATM   10   H5 AAA     0      -2.464  -1.863  -0.060  1.00  0.00           H
+HETATM   11   C6 AAA     0      -2.251   0.284  -0.023  1.00  0.00           C
+HETATM   12   H6 AAA     0      -3.320   0.476  -0.047  1.00  0.00           H
+HETATM   13   C7 AAA     0      -1.345   1.350   0.020  1.00  0.00           C
+HETATM   14   H7 AAA     0      -1.710   2.374   0.035  1.00  0.00           H
+HETATM   15   C8 AAA     0       0.027   1.108   0.053  1.00  0.00           C
+HETATM   16   H8 AAA     0       0.714   1.949   0.096  1.00  0.00           H
+CONECT    1    2    3    4
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1    5    6
+CONECT    5    4
+CONECT    6    4    7   15
+CONECT    7    6    8    9
+CONECT    8    7
+CONECT    9    7   10   11
+CONECT   10    9
+CONECT   11    9   12   13
+CONECT   12   11
+CONECT   13   11   14   15
+CONECT   14   13
+CONECT   15    6   13   16
+CONECT   16   15
+END
+

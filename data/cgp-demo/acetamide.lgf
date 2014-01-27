@@ -1,0 +1,17 @@
+@nodes
+partial_charge	formal_charge	label	label2	card	color	coordX	coordY	
+-1	0	1	N	1	0	109.65	155.98	
+0.5	0	2	H	1	1	178.9	193.43	
+0.5	0	3	H	1	2	57.905	215.19	
+1	0	4	C	1	3	95.846	76.593	
+-0.5	0	5	O	1	4	148.45	18	
+-0.5	0	6	C	1	5	27	38.556	
+@edges
+		label	
+1	2	0	
+1	3	1	
+1	4	2	
+4	5	3	
+4	6	4	
+@attributes
+radius 23
