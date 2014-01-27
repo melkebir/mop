@@ -51,6 +51,14 @@ set( sym_src
   #	../GNA/webserver.cpp
 )
 
+set( atb2lgf_src
+	src/atb2lgf.cpp
+)
+
+set( atb2lgf_hdr
+	src/cgp/solverdummy.h
+)
+
 set( readsolution_src
 	src/readsolution.cpp
 )
@@ -91,6 +99,9 @@ target_link_libraries( partition ${CommonLibs} )
 
 add_executable( readsolution ${common_src} ${common_hdr} ${readsolution_src} ${readsolution_hdr} )
 target_link_libraries( readsolution ${CommonLibs} )
+
+add_executable( atb2lgf ${common_src} ${common_hdr} ${atb2lgf_src} ${atb2lgf_hdr} )
+target_link_libraries( atb2lgf ${CommonLibs} )
 
 add_executable( fragments ${common_src} ${common_hdr} ${fragments_src} ${fragments_hdr} )
 target_link_libraries( fragments ${CommonLibs} )
