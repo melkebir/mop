@@ -61,9 +61,9 @@ public:
     Node v = _gToMol2[uv];
 
     out << "            {" << std::endl
-        << "              id1: " << _mol1.getLabel(u) << "," << std::endl
-        << "              id2: " << _mol2.getLabel(v) << "," << std::endl
-        << "              charge: " << _mol2.getPartialCharge(v) << std::endl
+        << "              \"id1\": " << _mol1.getLabel(u) << "," << std::endl
+        << "              \"id2\": " << _mol2.getLabel(v) << "," << std::endl
+        << "              \"charge\": " << _mol2.getPartialCharge(v) << std::endl
         << "            }";
 
     const NodeVector& uNeighbors = _g1ToDeg1Neighbors[u];
@@ -74,9 +74,9 @@ public:
     {
       out << "," << std::endl;
       out << "            {" << std::endl
-          << "              id1: " << _mol1.getLabel(uNeighbors[i]) << "," << std::endl
-          << "              id2: " << _mol2.getLabel(vNeighbors[i]) << "," << std::endl
-          << "              charge: " << _mol2.getPartialCharge(vNeighbors[i]) << std::endl
+          << "              \"id1\": " << _mol1.getLabel(uNeighbors[i]) << "," << std::endl
+          << "              \"id2\": " << _mol2.getLabel(vNeighbors[i]) << "," << std::endl
+          << "              \"charge\": " << _mol2.getPartialCharge(vNeighbors[i]) << std::endl
           << "            }";
     }
   }
@@ -127,9 +127,17 @@ public:
   }
 
   void printProductNodeVectorJSON(const std::vector<Node>& nodes,
-                                  std::ostream& out) const
+                                  std::ostream& out,
+                                  const bool& fst) const
   {
-    out << "          pairs: [";
+    if (fst)
+    {
+      out << "          \"pairs\": [";
+    }
+    else
+    {
+      out << "," << std::endl << "          \"pairs\": [";
+    }
     bool first = true;
     for (typename std::vector<Node>::const_iterator it = nodes.begin();
          it != nodes.end(); ++it)
@@ -145,7 +153,7 @@ public:
       }
       printProductNodeJSON(*it, out);
     }
-    out << std::endl << "          ]" << std::endl;
+    out << std::endl << "          ]";
   }
 
   int getNumNodes() const { return _numNodes; }
