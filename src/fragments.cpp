@@ -54,8 +54,8 @@ void outputJSON(const ProductType& prod,
                 std::ostream& out)
 {
   out << "    {" << std::endl
-      << "      atb_id: " << filename << "," << std::endl
-      << "      fragments: [" << std::endl
+      << "      \"atb_id\": " << filename << "," << std::endl
+      << "      \"fragments\": [" << std::endl
       << "        {" << std::endl;
 
   bool first = true;
