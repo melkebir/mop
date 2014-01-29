@@ -54,16 +54,21 @@ void outputJSON(const ProductType& prod,
                 std::ostream& out)
 {
   out << "    {" << std::endl
-      << "      atb_id: " << filename << std::endl
+      << "      atb_id: " << filename << "," << std::endl
       << "      fragments: [" << std::endl
       << "        {" << std::endl;
 
+  bool first = true;
   for (size_t i = 0; i < cliques.size(); ++i)
   {
-    prod.printProductNodeVectorJSON(cliques[i], out);
+    prod.printProductNodeVectorJSON(cliques[i], out, first);
+    if (first)
+    {
+      first = false;
+    }
   }
 
-  out << "        }" << std::endl
+  out << std::endl << "        }" << std::endl
       << "      ]" << std::endl
       << "    }";
 }

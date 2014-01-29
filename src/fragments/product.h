@@ -127,9 +127,17 @@ public:
   }
 
   void printProductNodeVectorJSON(const std::vector<Node>& nodes,
-                                  std::ostream& out) const
+                                  std::ostream& out,
+                                  const bool& fst) const
   {
-    out << "          pairs: [";
+    if (fst)
+    {
+      out << "          pairs: [";
+    }
+    else
+    {
+      out << "," << std::endl << "          pairs: [";
+    }
     bool first = true;
     for (typename std::vector<Node>::const_iterator it = nodes.begin();
          it != nodes.end(); ++it)
@@ -145,7 +153,7 @@ public:
       }
       printProductNodeJSON(*it, out);
     }
-    out << std::endl << "          ]" << std::endl;
+    out << std::endl << "          ]";
   }
 
   int getNumNodes() const { return _numNodes; }
