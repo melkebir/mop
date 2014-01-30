@@ -128,7 +128,7 @@ public:
 
   void printProductNodeVectorJSON(const std::vector<Node>& nodes,
                                   std::ostream& out,
-                                  const bool& fst) const
+                                  const bool fst) const
   {
     if (fst)
     {
@@ -138,6 +138,7 @@ public:
     {
       out << "," << std::endl << "          \"pairs\": [";
     }
+
     bool first = true;
     for (typename std::vector<Node>::const_iterator it = nodes.begin();
          it != nodes.end(); ++it)
