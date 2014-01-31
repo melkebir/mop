@@ -132,11 +132,11 @@ public:
   {
     if (fst)
     {
-      out << "          \"pairs\": [";
+      out << "        \"pairs\": [";
     }
     else
     {
-      out << "," << std::endl << "          \"pairs\": [";
+      out << "}," << std::endl << "{          \"pairs\": [";
     }
 
     bool first = true;
