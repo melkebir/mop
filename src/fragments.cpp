@@ -55,8 +55,7 @@ void outputJSON(const ProductType& prod,
 {
   out << "    {" << std::endl
       << "      \"atb_id\": " << filename << "," << std::endl
-      << "      \"fragments\": [" << std::endl
-      << "        {" << std::endl;
+      << "      \"fragments\": [" << std::endl;
 
   bool first = true;
   for (size_t i = 0; i < cliques.size(); ++i)
@@ -68,7 +67,7 @@ void outputJSON(const ProductType& prod,
     }
   }
 
-  out << std::endl << "        }" << std::endl
+  out << std::endl
       << "      ]" << std::endl
       << "    }";
 }
