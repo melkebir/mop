@@ -132,11 +132,14 @@ public:
   {
     if (fst)
     {
-      out << "        \"pairs\": [";
+      out << "        {" << std::endl
+          << "          \"pairs\": [" << std::endl;
     }
     else
     {
-      out << "}," << std::endl << "{          \"pairs\": [";
+      out << "," << std::endl
+          << "        {" << std::endl
+          << "          \"pairs\": [" << std::endl;
     }
 
     bool first = true;
@@ -146,7 +149,6 @@ public:
       if (first)
       {
         first = false;
-        out << std::endl;
       }
       else
       {
@@ -154,7 +156,11 @@ public:
       }
       printProductNodeJSON(*it, out);
     }
-    out << std::endl << "          ]";
+    /* TODO: implement score function */
+    out << std::endl
+        << "          ]," << std::endl
+        << "          \"score\": " << nodes.size() << std::endl
+        << "        }";
   }
 
   int getNumNodes() const { return _numNodes; }
