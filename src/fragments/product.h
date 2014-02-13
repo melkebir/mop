@@ -7,6 +7,7 @@
 
 // TODO:
 // - Remove deg-1 nodes
+// - Remove automorphisms
 
 #ifndef PRODUCT_H
 #define PRODUCT_H
@@ -25,13 +26,19 @@ public:
   /// The graph type of the input graph
   typedef GR Graph;
   typedef Molecule<Graph> MoleculeType;
+  typedef std::vector<typename Graph::Node> NodeVector;
+  typedef typename NodeVector::const_iterator NodeVectorIt;
+  typedef std::vector<NodeVector> NodeMatrix;
+  typedef typename NodeMatrix::const_iterator NodeMatrixIt;
+  typedef std::set<typename Graph::Node> NodeSet;
+  typedef std::pair<NodeSet, NodeSet> NodeSetPair;
+  typedef std::set<NodeSetPair> NodeSetPairSet;
 
 private:
   TEMPLATE_GRAPH_TYPEDEFS(Graph);
   typedef typename Graph::template NodeMap<Node> NodeNodeMap;
   typedef std::multiset<int> IntSet;
   typedef typename Graph::template NodeMap<IntSet> IntSetNodeMap;
-  typedef std::vector<Node> NodeVector;
   typedef typename Graph::template NodeMap<NodeVector> NodeVectorMap;
 
 public:
@@ -105,13 +112,12 @@ public:
     }
   }
 
-  void printProductNodeVector(const std::vector<Node>& nodes,
+  void printProductNodeVector(const NodeVector& nodes,
                               std::ostream& out) const
   {
     out << nodes.size() << ": ";
     bool first = true;
-    for (typename std::vector<Node>::const_iterator it = nodes.begin();
-         it != nodes.end(); ++it)
+    for (NodeVectorIt it = nodes.begin(); it != nodes.end(); ++it)
     {
       if (first)
       {
@@ -126,7 +132,7 @@ public:
     out << std::endl;
   }
 
-  void printProductNodeVectorJSON(const std::vector<Node>& nodes,
+  void printProductNodeVectorJSON(const NodeVector& nodes,
                                   std::ostream& out,
                                   const bool fst) const
   {
@@ -143,8 +149,7 @@ public:
     }
 
     bool first = true;
-    for (typename std::vector<Node>::const_iterator it = nodes.begin();
-         it != nodes.end(); ++it)
+    for (NodeVectorIt it = nodes.begin(); it != nodes.end(); ++it)
     {
       if (first)
       {
@@ -161,6 +166,44 @@ public:
         << "          ]," << std::endl
         << "          \"score\": " << nodes.size() << std::endl
         << "        }";
+  }
+
+  NodeMatrix removeAutomorphisms(const NodeMatrix& fragments) const
+  {
+    NodeMatrix result;
+
+    typedef std::map<NodeSetPair, NodeVector> NodeSetPairMap;
+    typedef typename NodeSetPairMap::const_iterator NodeSetPairMapIt;
+
+    NodeSetPairMap uniqueCommonFragments;
+    for (NodeMatrixIt fragmentIt = fragments.begin(); fragmentIt != fragments.end(); ++fragmentIt)
+    {
+      NodeSet fragment1, fragment2;
+
+      for (NodeVectorIt it = fragmentIt->begin(); it != fragmentIt->end(); ++it)
+      {
+        Node uv = *it;
+        Node u = _gToMol1[uv];
+        Node v = _gToMol2[uv];
+
+        fragment1.insert(u);
+        fragment2.insert(v);
+      }
+
+      NodeSetPair fragmentPair = std::make_pair(fragment1, fragment2);
+
+      if (uniqueCommonFragments.find(fragmentPair) == uniqueCommonFragments.end())
+      {
+        uniqueCommonFragments[fragmentPair] = *fragmentIt;
+      }
+    }
+
+    for (NodeSetPairMapIt it = uniqueCommonFragments.begin(); it != uniqueCommonFragments.end(); ++it)
+    {
+      result.push_back(it->second);
+    }
+
+    return result;
   }
 
   int getNumNodes() const { return _numNodes; }

@@ -80,12 +80,14 @@ int main(int argc, char** argv)
   int shell = 1;
   int bkType = 0;
   bool noJSON = false;
+  bool noAuto = false;
   std::string atb_id;
 
   ap.refOption("atb_id", "Specifies atb id (used for output)", atb_id, false)
     //.refOption("a", "Specifies Bron-Kerbosch algorithm type", bkType, false)
     .refOption("s", "Specifies shell size (default: 1)", shell, false)
     .refOption("no-json", "No JSON output", noJSON, false)
+    .refOption("a", "Remove automorphisms", noAuto, false)
     .refOption("v", "Specifies the verbosity level:\n"
                     "     0 - No output\n"
                     "     1 - Only necessary output\n"
@@ -135,7 +137,7 @@ int main(int argc, char** argv)
       std::cerr << "#max-cliques: " << bk.getNumberOfMaxCliques() << std::endl;
     }
 
-    const std::vector< std::vector<Graph::Node> >& cliques = bk.getMaxCliques();
+    const std::vector< std::vector<Graph::Node> > cliques = prod.removeAutomorphisms(bk.getMaxCliques());
     if (noJSON)
     {
       output(prod, cliques, std::cerr);

@@ -921,8 +921,9 @@ inline void Molecule<GR>::printDOT(const Solver<GR>* pSolver,
   out << "\tlabel=\"Total error: " << std::fixed << pSolver->getError() 
     //<< ", k=" << getMaxChargeGroupSize()
     << "\"" << std::endl
-    << "\tlabelloc=t" << std::endl;
-  out << "\tnode [style=filled]" << std::endl;
+    << "\tlabelloc=t" << std::endl
+    << "\tlayout=neato" << std::endl
+    << "\tnode [style=filled]" << std::endl;
 
   int cgIdx = 0;
   const ChargeGroupVector& cgVec = pSolver->getChargeGroupVector();
@@ -999,6 +1000,7 @@ inline void Molecule<GR>::printDOTnoLegend(const Solver<GR>* pSolver,
 
   out << "graph G {" << std::endl;
   out << "\tlabelloc=t" << std::endl;
+  out << "\tlayout=neato" << std::endl;
   out << "\tnode [style=filled]" << std::endl;
 
   int cgIdx = 0;
