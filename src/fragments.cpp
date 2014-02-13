@@ -87,7 +87,7 @@ int main(int argc, char** argv)
     //.refOption("a", "Specifies Bron-Kerbosch algorithm type", bkType, false)
     .refOption("s", "Specifies shell size (default: 1)", shell, false)
     .refOption("no-json", "No JSON output", noJSON, false)
-    .refOption("a", "Remove automorphisms", noAuto, false)
+    .refOption("a", "Do not remove automorphisms", noAuto, false)
     .refOption("v", "Specifies the verbosity level:\n"
                     "     0 - No output\n"
                     "     1 - Only necessary output\n"
