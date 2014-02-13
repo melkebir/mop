@@ -195,12 +195,15 @@ public:
       if (uniqueCommonFragments.find(fragmentPair) == uniqueCommonFragments.end())
       {
         uniqueCommonFragments[fragmentPair] = *fragmentIt;
+        result.push_back(*fragmentIt);
+        //std::cerr << "Added fragment with size: " << fragmentIt->size() << std::endl;
+        //printProductNodeVector(*fragmentIt, std::cerr);
       }
-    }
-
-    for (NodeSetPairMapIt it = uniqueCommonFragments.begin(); it != uniqueCommonFragments.end(); ++it)
-    {
-      result.push_back(it->second);
+      else
+      {
+        //std::cerr << "Skipped fragment with size: " << fragmentIt->size() << std::endl;
+        //printProductNodeVector(*fragmentIt, std::cerr);
+      }
     }
 
     return result;

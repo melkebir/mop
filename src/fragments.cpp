@@ -137,7 +137,7 @@ int main(int argc, char** argv)
       std::cerr << "#max-cliques: " << bk.getNumberOfMaxCliques() << std::endl;
     }
 
-    const std::vector< std::vector<Graph::Node> > cliques = prod.removeAutomorphisms(bk.getMaxCliques());
+    const std::vector< std::vector<Graph::Node> > cliques = noAuto ? bk.getMaxCliques() : prod.removeAutomorphisms(bk.getMaxCliques());
     if (noJSON)
     {
       output(prod, cliques, std::cerr);
