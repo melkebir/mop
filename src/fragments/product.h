@@ -234,29 +234,35 @@ private:
 
   void generate();
 
-  void generateAtomTypes(const MoleculeType& mol, IntSetNodeMap& intSet);
+  void generate(const MoleculeType& mol,
+                const IntNodeMap& deg,
+                IntSetNodeMap& intSet,
+                IntSetNodeMap& degSet);
 
   void generateDeg1NeighborSet(const Graph& g,
                                const IntNodeMap& deg,
                                NodeVectorMap& deg1NeighborMap);
 
-  void dfs(const Node v, const int depth,
+  void dfs(const IntNodeMap& deg,
+           const Node v, const int depth,
            const MoleculeType& mol,
            BoolNodeMap& visited,
-           IntSet& s);
+           IntSet& s, IntSet& ds);
 
   void determineDegrees(const Graph& g, IntNodeMap& deg);
 };
 
 template<typename GR>
-inline void Product<GR>::dfs(const Node v, const int depth,
+inline void Product<GR>::dfs(const IntNodeMap& deg,
+                             const Node v, const int depth,
                              const MoleculeType& mol,
                              BoolNodeMap& visited,
-                             IntSet& s)
+                             IntSet& s, IntSet& ds)
 {
   const Graph& g = mol.getGraph();
   visited[v] = true;
   s.insert(mol.getAtomType(v));
+  ds.insert(deg[v]);
 
   if (depth < _shell)
   {
@@ -265,7 +271,7 @@ inline void Product<GR>::dfs(const Node v, const int depth,
       Node w = g.oppositeNode(v, e);
       if (!visited[w])
       {
-        dfs(w, depth + 1, mol, visited, s);
+        dfs(deg, w, depth + 1, mol, visited, s, ds);
       }
     }
   }
@@ -301,7 +307,6 @@ inline void Product<GR>::generateDeg1NeighborSet(const Graph& g,
       }
     }
   }
-
 }
 
 template<typename GR>
@@ -314,7 +319,9 @@ inline void Product<GR>::generate()
   lemon::ArcLookUp<Graph> arcLookUp2(g2);
 
   IntSetNodeMap set1(g1);
+  IntSetNodeMap degSet1(g1);
   IntSetNodeMap set2(g2);
+  IntSetNodeMap degSet2(g2);
 
   IntNodeMap deg1(g1, 0);
   determineDegrees(g1, deg1);
@@ -322,15 +329,15 @@ inline void Product<GR>::generate()
   determineDegrees(g2, deg2);
 
   // determine degrees
-  generateAtomTypes(_mol1, set1);
-  generateAtomTypes(_mol2, set2);
+  generate(_mol1, deg1, set1, degSet1);
+  generate(_mol2, deg2, set2, degSet2);
 
   // generate nodes
   for (NodeIt u(g1); u != lemon::INVALID; ++u)
   {
     for (NodeIt v(g2); v != lemon::INVALID; ++v)
     {
-      if (_mol1.getAtomType(u) == _mol2.getAtomType(v) && set1[u] == set2[v])
+      if (_mol1.getAtomType(u) == _mol2.getAtomType(v) && set1[u] == set2[v] && degSet1[u] == degSet2[v])
       {
         assert(deg1[u] == deg2[v]);
         // don't add product nodes for a pair of deg-1 nodes unless _shell == 0
@@ -382,8 +389,10 @@ inline void Product<GR>::generate()
 }
 
 template<typename GR>
-inline void Product<GR>::generateAtomTypes(const MoleculeType& mol,
-                                           IntSetNodeMap& intSet)
+inline void Product<GR>::generate(const MoleculeType& mol,
+                                           const IntNodeMap& deg,
+                                           IntSetNodeMap& intSet,
+                                           IntSetNodeMap& degSet)
 {
   const Graph& g = mol.getGraph();
   BoolNodeMap visited(g, false);
@@ -391,7 +400,8 @@ inline void Product<GR>::generateAtomTypes(const MoleculeType& mol,
   {
     lemon::mapFill(g, visited, false);
     IntSet& s = intSet[v];
-    dfs(v, 0, mol, visited, s);
+    IntSet& ds = degSet[v];
+    dfs(deg, v, 0, mol, visited, s, ds);
   }
 }
 
